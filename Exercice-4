@@ -1,0 +1,44 @@
+#include<iostream>
+#include<math.h>
+#include <set>
+#include <vector>
+#include <iterator>
+using namespace std;
+
+class Personne{
+    public:
+        string nom;
+        string prenom;
+        int age;
+        Personne(string n,string p, int a){
+             nom=n;
+             prenom=p;
+             age=a;
+        }
+};
+
+int main()
+{
+    vector<Personne> data;
+    string p, n;
+    int a;
+
+    for (int i=0;i<3;i++) {
+        cout<<"Nom : "<<endl;
+        cin>> p;
+        cout<<"Prenom : "<<endl;
+        cin>>n;
+        cout<<"Age : "<<endl;
+        cin>>a;
+        Personne P1 = Personne(p, n, a);
+        data.push_back(P1);
+    }
+    // data.sort();
+ 
+    vector<Personne>::iterator it;
+
+    for(it = data.begin(); it != data.end(); ++it) {
+    cout<<"Nom : "<< it->nom<<"\nPrenom : "<< it->prenom<<"\nAge : "<< it->age <<endl;
+    }
+return 0;
+}
