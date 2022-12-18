@@ -1,0 +1,24 @@
+#include <iostream>
+#include <map>
+#include <string>
+using namespace std;
+
+int main(){
+int size;
+  map <string, int> data;
+  cout << "type the size of input " << endl;
+  cin >> size;
+  cout << "type the data in format of 'nom' (8 digits) 'prenom' (8 digits) 'age' (2 digits) sans espace additionel" << endl;
+  string first_name , second_name;
+  int age;
+  for (int i = 0 ; i < size; i++) {
+    cout << "type the data for the nbre> " << i << endl;
+    cin >> first_name >> second_name >> age;
+    data.insert( { first_name + second_name  , age} );
+  }
+  cout << "its already sorted " << endl;
+  for (auto it = data.begin(); it != data.end(); ++it) {
+    cout << it->first << " , " << it-> second << endl;
+  }
+  return 0;
+}
