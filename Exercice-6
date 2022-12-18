@@ -1,0 +1,27 @@
+#include <iostream>
+#include <string>
+using namespace std;
+class Test{
+public:
+  static int tableau[] ;
+public :
+  float division(int indice, int diviseur){
+    return tableau[indice]/diviseur;
+  }
+};
+int Test::tableau[] = {17, 12, 15, 38, 29, 157, 89, -22, 0, 5} ;
+int main()
+{
+  int x, y;
+  Test t;
+  cout << "Entrez l’indice de l’entier à diviser: " << endl;
+  cin >> x ;
+  cout << "Entrez le diviseur: " << endl;
+ try {
+   cin >> y ;
+   if (y == 0) throw "shouldn't equal to zero or null ";
+ } catch (char const * d ){
+   cout << "the exception is " << d << endl;
+ }
+ cout << "Le résultat de la division est: "<< t.division(x, y) <<   endl;
+}
