@@ -1,0 +1,46 @@
+#include <iostream>
+#include <list>
+using namespace std;
+
+list <int> integers1;
+list <int> integers2;
+int main(int argc, char * argv[]) {
+  int i (0);
+  if (argc == 1) goto label2;
+  else goto label1;
+ label1:
+  for (int i = 1; i < argc -1 ; i++ ) {
+    integers1.push_back(atoi(argv[i]));
+  }
+  integers1.sort();
+  for (auto ints : integers1){
+    cout << "the element of the index => " << i << " is ==> " << ints << "\t";
+    i++;
+  }
+  cout << "\n";
+
+return 0;
+ label2:
+  cout << "type the ammount of integers that will be inserted " << endl;
+  int size_list = 0;
+  cin >> size_list;
+  if (size_list == 0 || size_list < 0 ) {
+    cout << "pls retry " << endl;
+    goto label2;
+  }
+  int swap;
+  for (int i = 0; i < size_list; i ++) {
+    cout << "type the value of => " << i << " element pls " << endl;
+    cin >> swap;
+    if (swap) integers2.push_back(swap);
+  }
+  integers2.sort();
+  i = 0;
+  for (auto ints : integers2){
+    cout << "the element of the index => " << i << " is ==> " << ints << "\t";
+    i++;
+  }
+  cout << "\n";
+
+  return 0;
+}
